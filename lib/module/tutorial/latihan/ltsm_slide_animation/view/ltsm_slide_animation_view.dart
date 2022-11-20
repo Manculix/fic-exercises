@@ -15,23 +15,25 @@ class LtsmSlideAnimationView extends StatefulWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
+          width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
               //TODO: Buat variabel animate di dalam State/Controller
               // bool animate = false;
               AnimatedContainer(
-                duration: const Duration(milliseconds: 100),
+                duration: const Duration(milliseconds: 900),
                 height: 100.0,
                 width: 100.0,
-                margin: const EdgeInsets.only(
+                margin: EdgeInsets.only(
                   //TODO:
                   //jika animate == true, atur left menjadi 200
                   //jika animate == false, atur left menjadi 0
-                  left: 0.0,
+
+                  left: controller.animate ? 200.0 : 0.0,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.red[200],
+                  color: controller.animate ? Colors.red[200] : Colors.blue,
                   borderRadius: const BorderRadius.all(
                     Radius.circular(
                       16.0,
@@ -39,6 +41,7 @@ class LtsmSlideAnimationView extends StatefulWidget {
                   ),
                 ),
               ),
+
               const SizedBox(
                 height: 20.0,
               ),
@@ -52,7 +55,10 @@ class LtsmSlideAnimationView extends StatefulWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueGrey,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  controller.animate = !controller.animate;
+                  controller.setState(() {});
+                },
               ),
             ],
           ),
