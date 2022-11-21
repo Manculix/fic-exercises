@@ -21,6 +21,13 @@ class LtsmEnabledOrDisabledView extends StatefulWidget {
               Center(
                 child: Column(
                   children: [
+                    Text(
+                      "${controller.counter}",
+                      style: const TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     ElevatedButton.icon(
                       icon: const Icon(Icons.add),
                       label: const Text("Add"),
@@ -29,7 +36,12 @@ class LtsmEnabledOrDisabledView extends StatefulWidget {
                             controller.enabled ? Colors.orange : Colors.grey,
                       ),
                       onPressed: () {
-                        if (controller.enabled == false) return;
+                        if (controller.enabled == false) {
+                          return;
+                        } else {
+                          controller.counter++;
+                          controller.setState(() {});
+                        }
                       },
                     ),
                   ],

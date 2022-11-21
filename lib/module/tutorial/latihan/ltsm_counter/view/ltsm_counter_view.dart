@@ -16,32 +16,34 @@ class LtsmCounterView extends StatefulWidget {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: [
-              /*
-              ? 1. ambil variabel counter, tampilkan ke dalam text
-              ! controller.counter lalu tampilkan di dalam Text("")
+          child: Center(
+            child: Column(
+              children: [
+                /*
+                ? 1. ambil variabel counter, tampilkan ke dalam text
+                ! controller.counter lalu tampilkan di dalam Text("")
 
-              ? 2. buat sebuah button, dan tambahkan event ini di dalam event onPressed()
-              ! ketika di klik, panggil fungsi updateCounter()
-              ! contoh: controller.updateCounter();
-              */
-              Text(
-                "${controller.counter}",
-                style: const TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+                ? 2. buat sebuah button, dan tambahkan event ini di dalam event onPressed()
+                ! ketika di klik, panggil fungsi updateCounter()
+                ! contoh: controller.updateCounter();
+                */
+                Text(
+                  "${controller.counter}",
+                  style: const TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              ElevatedButton.icon(
-                icon: const Icon(Icons.add),
-                label: const Text("Add"),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueGrey,
+                ElevatedButton.icon(
+                  icon: const Icon(Icons.add),
+                  label: const Text("Add"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueGrey,
+                  ),
+                  onPressed: () => controller.updateCounter(),
                 ),
-                onPressed: () => controller.updateCounter(),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
