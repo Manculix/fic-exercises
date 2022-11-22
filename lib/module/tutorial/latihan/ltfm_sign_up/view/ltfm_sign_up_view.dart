@@ -68,6 +68,31 @@ class LtfmSignUpView extends StatefulWidget {
                   onChanged: (value) {},
                 ),
               ),
+              Container(
+                padding: const EdgeInsets.all(12),
+                margin: const EdgeInsets.only(),
+                child: TextFormField(
+                  initialValue: '123456',
+                  maxLength: 20,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Password',
+                    labelStyle: TextStyle(
+                      color: Colors.blueGrey,
+                    ),
+                    suffixIcon: Icon(
+                      Icons.password,
+                    ),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blueGrey,
+                      ),
+                    ),
+                    helperText: 'Confirm password',
+                  ),
+                  onChanged: (value) {},
+                ),
+              ),
               ElevatedButton.icon(
                 icon: const Icon(Icons.login),
                 label: const Text("Login"),
