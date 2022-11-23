@@ -208,7 +208,7 @@ class LtfmCheckoutFormView extends StatefulWidget {
                     "value": 2,
                   },
                   {
-                    "label": "Ovo",
+                    "label": "OVO",
                     "value": 3,
                   },
                   {
